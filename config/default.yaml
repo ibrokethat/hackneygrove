@@ -1,0 +1,13 @@
+app:
+  port: 3000
+  pub_dir: "/public"
+  cookie_secret: "chicken-gangnam-style"
+apis:
+  base: "/apis"
+  components: "/components"
+files:
+  index: "/static/index.html"
+attributes:
+  base: "data-sp-"
+  component: "component"
+  componentType: "component-type"

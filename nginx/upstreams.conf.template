@@ -1,0 +1,3 @@
+upstream {APP}_apis  {
+  server localhost:3000;
+}

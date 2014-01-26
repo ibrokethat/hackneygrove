@@ -1,0 +1,41 @@
+{
+  "name": "hackneygrove",
+  "version": "0.0.0",
+  "description": "HackneyGrove|Architecture|www.hackneygrove.com",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:ibrokethat/hackneygrove.com"
+  },
+  "dependencies": {
+    "superposition": "0.0.x",
+    "config": "0.4.x",
+    "yaml": "*",
+    "mutil": "*"
+  },
+  "devDependencies": {
+    "assert": "*",
+    "should": "*",
+    "mocha": "*",
+    "chai": "*",
+    "sinon": "*",
+    "sinon-chai": "*",
+    "rewire": "2.0.x"
+  },
+  "scripts": {
+    "test": "npm test"
+  },
+  "keywords": [
+    "architecture",
+    "design",
+    "planning",
+    "eco",
+    "sustainability",
+    "green"
+  ],
+  "author": "si@ibrokethat.com",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/ibrokethat/hackneygrove.com/issues"
+  }
+}
