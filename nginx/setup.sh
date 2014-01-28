@@ -1,6 +1,6 @@
 sudo -v;
 
-NGINX_HOME=/usr/local/etc/nginx
+NGINX_HOME=/etc/nginx
 PWD=`pwd`
 
 if [ -d "$1" ]; then
@@ -11,21 +11,23 @@ if [ -f "$NGINX_HOME/nginx.conf" ] && [ ! -L "$NGINX_HOME/nginx.conf" ]; then
 	sudo mv "$NGINX_HOME/nginx.conf" "$NGINX_HOME/nginx.conf.original";
 fi
 
-if [ -f "dev.yaml" ]; then
-	sudo rm dev.yaml;
-fi
+# if [ -f "dev.yaml" ]; then
+# 	sudo rm dev.yaml;
+# fi
 
 sudo mkdir -p ../logs/nginx;
 
 sudo nginx -s stop;
 
-PORT=`nc -z 127.0.0.1 80`;
+# PORT=`nc -z 127.0.0.1 80`;
 
 if [ -z PORT ]; then
 	PORT=80;
 else
 	PORT=8080;
 fi
+
+# PORT = 80;
 
 node_executable=`which node`;
 

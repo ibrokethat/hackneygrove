@@ -5,27 +5,27 @@ var interpolate = require('mutil').interpolate;
 var file, fileName;
 
 
-if (process.env.USER === 'ec2-user') {
+if ( process.env.USER === 'ec2-user' ) {
   fileName = path.join(__dirname, 'prod.yaml');
 }
 else {
 	fileName = path.join(__dirname, 'dev.yaml');
 
-	if (!fs.existsSync(fileName)) {
-		file = fs.readFileSync(fileName + '.template', 'UTF-8');
+	// if (!fs.existsSync(fileName)) {
+	// 	file = fs.readFileSync(fileName + '.template', 'UTF-8');
 
-		console.log( 'NGINX PORT WILL BE: ', process.argv[2] || 80 );
+	// 	console.log( 'NGINX PORT WILL BE: ', process.argv[2] || 80 );
 
-		file = interpolate(file, {
-			GROUP: 'admin',
-			PWD: path.join( __dirname, '..' ),
-			PORT: process.argv[2] || 80,
-			USER: process.env.USER,
-      APP: process.env.APP
-		});
+	// 	file = interpolate(file, {
+	// 		GROUP : 'admin',
+	// 		PWD : path.join(__dirname, '..'),
+	// 		PORT : process.argv[2] || 80,
+	// 		USER : process.env.USER,
+ //      // UPSTREAM_PORT: CONF.app.port
+	// 	});
 
-		fs.writeFileSync(path.join(__dirname, 'dev.yaml'), file, 'UTF-8');
-	}
+	// 	fs.writeFileSync(path.join(__dirname, 'dev.yaml'), file, 'UTF-8');
+	// }
 }
 
 if (!file) {
