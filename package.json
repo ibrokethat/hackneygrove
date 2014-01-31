@@ -40,6 +40,7 @@
     "watch-js": "watchify -o static/build/index.js -e node_modules/superposition/lib/app/client.js -dv",
     "watch-css": "autoless static/css static/build/",
     "watch": "npm run watch-js & npm run watch-css",
+    "dev-start": "./dev_start.sh & npm run watch",
     "test" : "mocha -u bdd --reporter spec --recursive"
   }
 }

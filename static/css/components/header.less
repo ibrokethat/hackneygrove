@@ -1,16 +1,62 @@
 .sp-header {
+
   display: block;
 
   > h1 {
 
+    color: @color_text_dark;
     font-family: @font_title;
-    font-weight: @font_weight_light;
     font-size: @font_size_title_1;
+    font-weight: @font_weight_light;
+    letter-spacing: @x0-25gru;
   }
   > h2 {
 
+    color: @color_text_light;
+    font-size: @font_size_tiny;
     font-weight: @font_weight_light;
-    font-size: @font_size_default;
+    left: @x0-25gru;
+    letter-spacing: @x0-50gru - 0.5;
+    position: relative;
+    top: -@x1-25gru;
+    word-spacing: @x1-75gru;
+
+    > span {
+      letter-spacing: @x1-25gru - 0.5;
+    }
   }
+
+  > label {
+
+    font-size: @x3-00gru;
+    position: absolute;
+    right: @x1-50gru;
+    top: @x2-25gru;
+
+    &:before {
+      color: @color_text;
+    }
+
+  }
+
+  > input[type='checkbox'] {
+
+    display: none;
+
+    &- div {
+      background-color: rgba(0, 0, 0, 0.8);
+      position: absolute;
+      left: 100%;
+      transition: left 0.5s ease;
+      z-index: 1000;
+    }
+    &:checked - div {
+      left: 10%;
+      transition: left 0.5s ease;
+    }
+
+  }
+
+
 
 }
