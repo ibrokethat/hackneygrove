@@ -38,6 +38,7 @@ body {
   font-family: @font_default;
   font-size: @font_size_default;
   font-weight: @font_weight_light;
+  overflow-x: hidden;
 }
 article,aside,details,figcaption,figure,
 footer,header,hgroup,menu,nav,section {
@@ -92,8 +93,10 @@ button, [role="button"], input[type="button"], input[type="reset"], input[type="
   user-select: none;
 }
 
-button,              input[type="button"],
-input[type="reset"], input[type="submit"] {
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
   -webkit-appearance: button;
   margin: 0;
   padding: 0;
