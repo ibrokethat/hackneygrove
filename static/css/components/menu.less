@@ -1,5 +1,45 @@
-.sp-icon-menu {
-  display:none;
+@media @mq_tablet_landscape, @mq_tablet_portrait, @mq_desktop {
+
+  .sp-icon-menu {
+    display:none;
+  }
+
+  .sp-menu-nav {
+
+    z-index: 1000;
+    overflow: hidden;
+    position: relative;
+    top: -@x6-75gru;
+    margin-left: @x1-00gru * 29;
+
+    & .sp-nav-item {
+      display: inline-block;
+      padding: 0 @x1-50gru;
+
+      &:last-child {
+        position: absolute;
+        right: @x0-75gru;
+      }
+
+      &:nth-last-child(2) {
+        position: absolute;
+        right: @x1-00gru * 14;
+      }
+
+    }
+
+    & .sp-nav-link {
+
+      color: @color_text_light;
+      border-bottom: none;
+      display: inline-block;
+      font-size: @x2-75gru + 1;
+      padding: @x1-00gru 0;
+      text-shadow: 0px 1px 0px rgba(150, 150, 150, 0.5);
+    }
+
+  }
+
 }
 
 @media @mq_mobile_landscape, @mq_mobile_portrait {
@@ -10,7 +50,7 @@
 
     background-color: transparent;
     border: none;
-
+    outline: none;
     font-size: @x3-00gru;
     position: absolute;
     right: @x1-50gru;
@@ -25,18 +65,43 @@
   .sp-menu-nav {
 
     left: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
     position: absolute;
     z-index: 1000;
+    height: 0;
+    width: 0;
+    overflow: hidden;
+
+    &.sp-active {
+      height: @x1-00gru * 80;
+      width:  @x1-00gru * 80;
+    }
 
     &.sp-transition-to-inactive {
       left: 100%;
       transition: left 0.3s ease;
     }
     &.sp-transition-to-active {
-      left: 10%;
+      left: 0;
       transition: left 0.3s ease;
     }
+
+    &> .sp-nav {
+
+      background-color: rgba(0, 0, 0, 0.9);
+      border-top: 1px solid @color_border_light;
+      height: 640px;
+      width: 640px;
+    }
+
+    & .sp-nav-link {
+
+      color: @color_link_invert;
+      border-bottom: 1px solid rgba(51, 51, 51, 0.8);
+      display: inline-block;
+      padding: @x2-00gru @x3-00gru;
+      width: 100%;
+    }
+
 
   }
 
