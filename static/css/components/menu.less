@@ -9,7 +9,7 @@
     z-index: 1000;
     overflow: hidden;
     position: relative;
-    top: -@x4-75gru;
+    top: -@x5-75gru;
     margin-left: @x1-00gru * 29;
 
     & .sp-nav-item {
@@ -22,19 +22,18 @@
 
       &:nth-last-child(2) {
         position: absolute;
-        right: @x1-00gru * 11;
+        right: (@x1-00gru * 10) + 2;
       }
 
     }
 
     & .sp-nav-link {
 
-      .title-font;
+      .title-font();
       color: @color_text_light;
       border-bottom: none;
       display: inline-block;
-      .x-padding(1);
-      .y-padding(1);
+      .y-padding(2);
 
     }
 

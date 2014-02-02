@@ -4,18 +4,31 @@
 
   display: block;
 
-  border-top: 1px solid @color_background_dark + 70;
-
-  .gradient(@color_background_dark, @color_background_dark_gradient, @color_background_dark);
+  border-top: 1px solid @color_border_light;
+  background-color: @color_background;
 
 }
 
+@media @mq_mobile_landscape, @mq_mobile_portrait {
+
+  .sp-footer-nav {
+
+    & .sp-nav-link {
+      border-bottom: 1px solid @color_border_light;
+    .x-padding;
+    }
+
+  }
+
+}
 
 @media @mq_tablet_landscape, @mq_tablet_portrait, @mq_desktop {
 
-
   .sp-footer {
+
     height: @sp-footer-desktop-height;
+    padding-left: @x1-00gru;
+
   }
 
   .sp-footer-nav {
@@ -25,8 +38,10 @@
     }
 
     & .sp-nav-link {
+      font-size: @x1-50gru;
       width: auto;
       border-bottom: none;
+      line-height: 1.4;
     }
 
   }
