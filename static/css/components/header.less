@@ -1,33 +1,41 @@
+@sp-header-height: @x8-00gru;
+
 .sp-header {
+
+
   border-bottom: 1px solid #eaeaea;
   display: block;
-  height: @x7-00gru;
-  padding: 0 @x1-50gru;
+  height: @sp-header-height;
+
+  .x-padding;
+  .y-padding;
+
 }
 
 .sp-header-company {
 
   color: @color_text_dark;
-  font-family: @font_title;
-  font-size: @font_size_title_1;
-  font-weight: @font_weight_light;
-  letter-spacing: @x0-25gru;
+
+  .title-font(@font_size_title_1);
+
   text-shadow: 0px 1px 0px rgba(150, 150, 150, 0.5);
 }
 
 .sp-header-strapline {
 
   color: @color_text_light;
-  font-size: @font_size_tiny;
+
+  .title-font(@font_size_tiny);
+
   font-weight: @font_weight_light;
+  letter-spacing: @x0-50gru;
   left: @x0-25gru;
-  letter-spacing: @x0-50gru - 0.5;
   position: relative;
-  top: -@x1-25gru;
-  word-spacing: @x1-75gru;
+  top: -@x0-50gru + 1;
+  word-spacing: @x1-75gru + 1;
   text-shadow: 0px 1px 0px rgba(150, 150, 150, 0.5);
 
   > span {
-    letter-spacing: @x1-25gru - 0.5;
+    letter-spacing: @x0-50gru + 1.5;
   }
 }

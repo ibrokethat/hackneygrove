@@ -1,8 +1,34 @@
+@sp-footer-desktop-height: @x6-00gru;
+
 .sp-footer {
+
   display: block;
 
   border-top: 1px solid @color_background_dark + 70;
 
   .gradient(@color_background_dark, @color_background_dark_gradient, @color_background_dark);
+
+}
+
+
+@media @mq_tablet_landscape, @mq_tablet_portrait, @mq_desktop {
+
+
+  .sp-footer {
+    height: @sp-footer-desktop-height;
+  }
+
+  .sp-footer-nav {
+
+    & .sp-nav-item {
+      float: left;
+    }
+
+    & .sp-nav-link {
+      width: auto;
+      border-bottom: none;
+    }
+
+  }
 
 }
