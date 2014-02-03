@@ -53,7 +53,7 @@
     font-size: @x3-00gru;
     position: absolute;
     right: @x1-50gru;
-    top: @x2-75gru - 1;
+    top: @x2-50gru + 1;
 
     &:before {
       color: @color_text;
@@ -61,37 +61,37 @@
 
   }
 
-  .sp-menu {
+  .sp-menu .sp-nav {
 
+    position: absolute;
     top: @x8-00gru;
     left: 100%;
-    position: absolute;
     z-index: 1000;
     height: 0;
     width: 0;
     overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.9);
+    border-top: 1px solid @color_border_light;
+
 
     &.sp-active {
       height: @x1-00gru * 80;
-      width:  @x1-00gru * 80;
+      width: 100%;
     }
 
     &.sp-transition-to-inactive {
-      left: 100%;
-      .transition(left 0.3s ease);
+      -webkit-transform: translate3d(0, 0, 0);
+      -webkit-transition: -webkit-transform 0.3s ease;
+      -moz-transform: translate3d(0, 0, 0);
+      -moz-transition: -moz-transform 0.3s ease;
     }
     &.sp-transition-to-active {
-      left: 0;
-      .transition(left 0.3s ease);
+      -webkit-transform: translate3d(-100%, 0, 0);
+      -webkit-transition: -webkit-transform 0.3s ease;
+      -moz-transform: translate3d(-100%, 0, 0);
+      -moz-transition: -moz-transform 1s ease;
     }
 
-    &> .sp-nav {
-
-      background-color: rgba(0, 0, 0, 0.9);
-      border-top: 1px solid @color_border_light;
-      height: 640px;
-      width: 640px;
-    }
 
     & .sp-nav-link {
 
