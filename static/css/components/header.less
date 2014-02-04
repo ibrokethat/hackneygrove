@@ -26,13 +26,24 @@
   .title-font(@font_size_tiny);
   font-family: @font_default;
 
-  letter-spacing: @x0-50gru - 0.5;
+  letter-spacing: @x0-50gru - 0.75;
   left: @x0-25gru;
   position: relative;
   top: -@x0-50gru + 1;
-  word-spacing: @x1-75gru + 1;
+  word-spacing: @x1-50gru + 2;
 
   > span {
-    letter-spacing: @x0-50gru + 1;
+    letter-spacing: @x0-50gru + 1.2;
   }
+}
+
+
+@media @mq_tablet_landscape, @mq_tablet_portrait, @mq_desktop {
+
+  .sp-header {
+
+    .x-padding(4);
+
+  }
+
 }
