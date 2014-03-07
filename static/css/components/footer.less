@@ -1,17 +1,22 @@
-@sp-footer-desktop-height: @x6-00gru;
+@sp-footer-horizontal: @x6-00gru;
+@sp-footer-vertical: @x6-00gru * 4;
 
 .sp-footer {
 
-  display: block;
-  position: relative;
-  border-top: 1px solid @color_border_light;
   background-color: @color_background;
-
+  border-top: 1px solid @color_border_light;
+  bottom: 0;
+  display: block;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
 }
 
 @media @mq_mobile_landscape, @mq_mobile_portrait {
 
   .sp-footer {
+
+    height: @sp-footer-vertical;
 
     & .sp-nav-link {
       border-bottom: 1px solid @color_border_light;
@@ -26,7 +31,7 @@
 
   .sp-footer {
 
-    height: @sp-footer-desktop-height;
+    height: @sp-footer-horizontal;
     .x-padding(3);
 
     & .sp-nav-item {
