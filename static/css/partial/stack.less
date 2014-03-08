@@ -1,0 +1,129 @@
+.panel (@name) {
+  -webkit-animation-name: @name;
+  animation-name: @name;
+}
+
+.active-panel () {
+  .panel(activate-panel);
+  position: relative;
+  width: 100%
+
+}
+
+.inactive-panel () {
+  .panel(deactivate-panel);
+  position: absolute;
+  width: 100%
+}
+
+.init-stack-panel (@time: 0.6s, @ease: ease) {
+
+  position: relative;
+  -webkit-animation-duration: @time;
+  animation-duration: @time;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+  -webkit-animation-timing-function: @ease;
+  animation-timing-function: @ease;
+  overflow: hidden !important;
+
+}
+
+
+@-webkit-keyframes activate-panel {
+    0% {
+      display    : block;
+      //height     : auto;
+      position   : absolute;
+        -webkit-transform : translateX( 100% );
+      // transform  : translateX( 100% );
+    }
+    99% {
+      display    : block;
+      //height     : auto;
+      position   : absolute;
+        -webkit-transform : translateX( 0 );
+      // transform  : translateX( 0 );
+    }
+    100% {
+      display    : block;
+      //height     : auto;
+      position   : relative;
+        -webkit-transform : translateX( 0 );
+      // transform  : translateX( 0 );
+    }
+  }
+
+  @keyframes activate-panel {
+    0% {
+      display    : block;
+      //height     : auto;
+      position   : absolute;
+        // -webkit-transform : translateX( 100% );
+      transform  : translateX( 100% );
+    }
+    99% {
+      display    : block;
+      //height     : auto;
+      position   : absolute;
+        // -webkit-transform : translateX( 0 );
+      transform  : translateX( 0 );
+    }
+    100% {
+      display    : block;
+      //height     : auto;
+      position   : relative;
+        // -webkit-transform : translateX( 0 );
+      transform  : translateX( 0 );
+    }
+  }
+
+  @-webkit-keyframes deactivate-panel {
+    0% {
+      display    : block;
+      //height     : auto;
+      position   : absolute;
+        -webkit-transform : translateX( 0 );
+      // transform  : translateX( 0 );
+    }
+    99% {
+      display    : block;
+      //height     : auto;
+      position   : absolute;
+        -webkit-transform : translateX( -100% );
+      // transform  : translateX( -100% );
+    }
+    100% {
+      display    : none;
+      //height     : auto;
+      position   : absolute;
+        -webkit-transform : translateX( -100% );
+      // transform  : translateX( -100% );
+    }
+  }
+
+  @keyframes deactivate-panel {
+    0% {
+      display    : block;
+      //height     : auto;
+      position   : absolute;
+        // -webkit-transform : translateX( 0 );
+      transform  : translateX( 0 );
+    }
+    99% {
+      display    : block;
+      //height     : auto;
+      position   : absolute;
+        // -webkit-transform : translateX( -100% );
+      transform  : translateX( -100% );
+    }
+    100% {
+      display    : none;
+      //height     : auto;
+      position   : absolute;
+        // -webkit-transform : translateX( 100% );
+      transform  : translateX( 100% );
+    }
+  }
